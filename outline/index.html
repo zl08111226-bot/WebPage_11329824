@@ -3,475 +3,2233 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="藍天咖啡，為手沖咖啡愛好者挑選當季精品咖啡豆，讓每一杯都清澈、明亮、值得細品。">
-  <title>藍天咖啡｜讓風味，慢慢抵達</title>
+  <meta name="description" content="ZL咖啡 - 專為咖啡喜好者打造的頂級咖啡豆品牌。嚴選SCA 90+全球卓越莊園豆，匠人極致烘焙，邀您探索極致深邃的黑金風味世界。">
+  <meta name="keywords" content="ZL咖啡, 頂級咖啡豆, 手沖咖啡, 咖啡豆推薦, 藝妓咖啡, 單品咖啡, 精品咖啡豆">
+  <title>ZL咖啡 ｜ 頂級莊園咖啡豆 · 極致黑金品味</title>
+  
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600;700;900&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --navy: #062742;
-      --blue: #0c5b95;
-      --sky: #75c6e8;
-      --mist: #eaf5f7;
-      --cream: #fbfaf6;
-      --ink: #122534;
-      --muted: #607482;
-      --line: #d7e4e8;
-      --sand: #e5b66b;
-      --shadow: 0 18px 50px rgba(6, 39, 66, .13);
+      --bg-primary: #0a0a0c;
+      --bg-secondary: #121215;
+      --bg-card: #18181d;
+      --bg-card-hover: #222228;
+      --bg-glass: rgba(18, 18, 22, 0.75);
+      
+      --accent-gold: #d4af37;
+      --accent-gold-light: #f3e5ab;
+      --accent-gold-dark: #aa8620;
+      --accent-amber: #e69138;
+      
+      --text-white: #fdfdfd;
+      --text-muted: #a0a0ab;
+      --text-dark: #585863;
+      
+      --border-dark: #272730;
+      --border-gold: rgba(212, 175, 55, 0.35);
+      
+      --shadow-subtle: 0 10px 30px rgba(0, 0, 0, 0.4);
+      --shadow-gold: 0 10px 35px rgba(212, 175, 55, 0.15);
+      --radius: 8px;
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      color: var(--ink);
-      background: var(--cream);
-      font-family: "Noto Sans TC", sans-serif;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-white);
+      font-family: 'Noto Sans TC', sans-serif;
       font-size: 16px;
       line-height: 1.7;
+      overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
 
-    a { color: inherit; text-decoration: none; }
-    button, input { font: inherit; }
-    button { cursor: pointer; }
-    .wrap { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
-    .serif { font-family: "Noto Serif TC", serif; }
-    .eyebrow {
-      display: flex;
+    /* Common Typography */
+    h1, h2, h3, h4, .serif {
+      font-family: 'Noto Serif TC', serif;
+    }
+
+    .en-title {
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    button {
+      cursor: pointer;
+      font: inherit;
+      border: none;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: min(1200px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    /* Gold Accents & Utility */
+    .text-gold {
+      color: var(--accent-gold);
+    }
+
+    .gradient-gold {
+      background: linear-gradient(135deg, #f9e2af 0%, #d4af37 50%, #aa8620 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .badge-gold {
+      display: inline-flex;
       align-items: center;
-      gap: 10px;
-      margin: 0 0 13px;
-      color: var(--blue);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .18em;
+      gap: 6px;
+      padding: 4px 14px;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid var(--border-gold);
+      border-radius: 50px;
+      color: var(--accent-gold-light);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
     }
-    .eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .section-subtitle {
+      font-size: 0.88rem;
+      letter-spacing: 0.25em;
+      color: var(--accent-gold);
+      margin-bottom: 12px;
+      display: block;
+    }
+
     .section-title {
-      margin: 0;
-      font: 700 clamp(30px, 4vw, 46px)/1.28 "Noto Serif TC", serif;
-      letter-spacing: .035em;
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 16px;
+      color: var(--text-white);
     }
-    .section-title em { color: var(--blue); font-style: normal; }
-    .section-copy { max-width: 48ch; margin: 20px 0 0; color: var(--muted); }
-    .button {
+
+    .section-desc {
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto;
+      font-size: 1rem;
+    }
+
+    /* Buttons */
+    .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 11px;
-      min-height: 50px;
-      padding: 12px 23px;
-      border: 1px solid transparent;
-      border-radius: 2px;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: .04em;
-      transition: transform .22s ease, box-shadow .22s ease, background .22s ease;
+      gap: 10px;
+      padding: 13px 32px;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      transition: var(--transition);
     }
-    .button:hover { transform: translateY(-2px); }
-    .button:focus-visible, a:focus-visible { outline: 3px solid var(--sky); outline-offset: 4px; }
-    .button-primary { color: var(--navy); background: var(--sand); box-shadow: 0 9px 22px rgba(1, 35, 59, .2); }
-    .button-primary:hover { background: #f0c77f; }
-    .button-outline { color: #fff; border-color: rgba(255,255,255,.58); }
-    .button-outline:hover { background: rgba(255,255,255,.1); }
-    .arrow { font-size: 18px; line-height: 1; }
 
-    /* Header */
-    .site-header {
-      position: absolute;
-      z-index: 10;
+    .btn-gold {
+      background: linear-gradient(135deg, #dfbc45 0%, #c59f2c 100%);
+      color: #0b0b0e;
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+    }
+
+    .btn-gold:hover {
+      background: linear-gradient(135deg, #ebd169 0%, #d4af37 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 26px rgba(212, 175, 55, 0.45);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-white);
+      border: 1px solid var(--border-gold);
+    }
+
+    .btn-outline:hover {
+      background: rgba(212, 175, 55, 0.12);
+      border-color: var(--accent-gold);
+      color: var(--accent-gold-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-sm {
+      padding: 8px 18px;
+      font-size: 0.85rem;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
-      color: #fff;
-      border-bottom: 1px solid rgba(255, 255, 255, .16);
+      z-index: 1000;
+      background: rgba(10, 10, 12, 0.85);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      transition: var(--transition);
     }
-    .nav { display: flex; align-items: center; justify-content: space-between; min-height: 78px; }
-    .brand { display: flex; align-items: center; gap: 12px; font: 700 20px/1 "Noto Serif TC", serif; letter-spacing: .11em; }
-    .brand-mark {
-      display: grid;
-      width: 29px;
-      height: 29px;
-      place-items: center;
-      border: 1px solid var(--sky);
-      border-radius: 50%;
-      color: var(--sky);
-      font: 700 19px/1 "Playfair Display", serif;
-    }
-    .brand small { display: block; margin-top: 5px; color: rgba(255,255,255,.64); font: 600 8px/1 sans-serif; letter-spacing: .21em; }
-    .nav-links { display: flex; align-items: center; gap: 29px; font-size: 13px; font-weight: 500; }
-    .nav-links a { position: relative; padding: 6px 0; }
-    .nav-links a:not(.nav-cta)::after { content: ""; position: absolute; right: 0; bottom: 0; left: 0; height: 1px; background: var(--sky); transform: scaleX(0); transform-origin: right; transition: transform .22s; }
-    .nav-links a:not(.nav-cta):hover::after { transform: scaleX(1); transform-origin: left; }
-    .nav-cta { padding: 8px 16px !important; border: 1px solid rgba(255,255,255,.55); }
-    .nav-cta:hover { color: var(--navy); background: #fff; }
-    .menu-toggle { display: none; border: 0; color: #fff; background: transparent; }
 
-    /* Hero */
-    .hero { position: relative; min-height: 704px; overflow: hidden; color: #fff; background: var(--navy); }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-emblem {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1.5px solid var(--accent-gold);
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at center, #24211a 0%, #0e0d0b 100%);
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
+    }
+
+    .logo-emblem span {
+      font-family: 'Cinzel', serif;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--accent-gold);
+    }
+
+    .brand-text h1 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      line-height: 1.1;
+      color: var(--text-white);
+    }
+
+    .brand-text p {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.28em;
+      color: var(--accent-gold);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-menu a {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-menu a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-gold);
+      transition: width 0.3s ease;
+    }
+
+    .nav-menu a:hover {
+      color: var(--text-white);
+    }
+
+    .nav-menu a:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .cart-btn-wrap {
+      position: relative;
+    }
+
+    .cart-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-dark);
+      color: var(--text-white);
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .cart-btn:hover {
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+      background: var(--bg-card);
+    }
+
+    .cart-badge {
+      position: absolute;
+      top: -3px;
+      right: -3px;
+      background: var(--accent-gold);
+      color: #000;
+      font-size: 0.72rem;
+      font-weight: 700;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-white);
+      font-size: 1.5rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 100px;
+      padding-bottom: 60px;
+      background: radial-gradient(circle at 80% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 45%),
+                  radial-gradient(circle at 20% 80%, rgba(230, 145, 56, 0.04) 0%, transparent 40%),
+                  var(--bg-primary);
+      overflow: hidden;
+    }
+
     .hero::before {
-      content: "";
+      content: '';
       position: absolute;
       inset: 0;
-      opacity: .36;
-      background: radial-gradient(circle at 76% 45%, rgba(55, 167, 212, .75), transparent 23%), linear-gradient(117deg, rgba(4,25,45,.22) 0 48%, rgba(5,47,78,.82) 78%);
+      background-image: 
+        radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+      background-size: 32px 32px;
+      opacity: 0.6;
+      pointer-events: none;
     }
-    .hero::after {
-      content: "";
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content {
+      max-width: 620px;
+    }
+
+    .hero-badge-wrap {
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 4.8vw, 4.2rem);
+      line-height: 1.18;
+      font-weight: 900;
+      letter-spacing: 0.03em;
+      margin-bottom: 24px;
+    }
+
+    .hero-desc {
+      font-size: 1.12rem;
+      color: var(--text-muted);
+      line-height: 1.85;
+      margin-bottom: 38px;
+    }
+
+    .hero-desc strong {
+      color: var(--accent-gold-light);
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .stat-item .stat-num {
+      font-family: 'Cinzel', serif;
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      display: block;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-item .stat-label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* Hero Visual Card */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-card {
+      position: relative;
+      width: 100%;
+      max-width: 440px;
+      background: linear-gradient(145deg, #181820 0%, #0d0d10 100%);
+      border: 1px solid var(--border-gold);
+      border-radius: 14px;
+      padding: 30px;
+      box-shadow: var(--shadow-subtle), 0 0 40px rgba(212, 175, 55, 0.1);
+      overflow: hidden;
+    }
+
+    .hero-card::after {
+      content: '';
       position: absolute;
-      top: 0;
-      right: -180px;
-      width: 760px;
-      height: 760px;
-      border: 1px solid rgba(153,220,240,.22);
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-card-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 290px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 24px;
+      background: #15151a;
+    }
+
+    .hero-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: contrast(1.1) brightness(0.95);
+      transition: transform 0.6s ease;
+    }
+
+    .hero-card:hover .hero-card-img-wrap img {
+      transform: scale(1.05);
+    }
+
+    .hero-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(10, 10, 12, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border-gold);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      color: var(--accent-gold);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+
+    .hero-card-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .hero-card-flavor {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    .flavor-tag {
+      font-size: 0.75rem;
+      padding: 3px 9px;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 4px;
+      color: var(--text-muted);
+    }
+
+    .hero-card-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .hero-price {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      font-family: 'Cinzel', serif;
+    }
+
+    .hero-price small {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-decoration: line-through;
+      margin-left: 6px;
+    }
+
+    /* Floating Feature Badge */
+    .floating-badge {
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      background: #111116;
+      border: 1px solid var(--border-gold);
+      border-radius: 12px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      z-index: 3;
+    }
+
+    .badge-icon {
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
-      box-shadow: 0 0 0 62px rgba(153,220,240,.045), 0 0 0 180px rgba(153,220,240,.025);
-    }
-    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.02fr .98fr; gap: 45px; align-items: center; min-height: 704px; padding: 122px 0 72px; }
-    .hero .eyebrow { color: var(--sky); }
-    .hero-title { max-width: 13ch; margin: 0; font: 900 clamp(42px, 5.5vw, 68px)/1.22 "Noto Serif TC", serif; letter-spacing: .075em; }
-    .hero-title .blue { color: var(--sky); }
-    .hero-lede { max-width: 42ch; margin: 26px 0 32px; color: rgba(255,255,255,.78); font-size: 16px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; }
-    .hero-note { margin-top: 28px; color: rgba(255,255,255,.52); font-size: 11px; letter-spacing: .1em; }
-    .hero-art { position: relative; min-height: 453px; }
-    .sun { position: absolute; top: 2%; right: 14%; width: 166px; height: 166px; border-radius: 50%; background: #93d6e6; box-shadow: 0 0 65px rgba(145,215,233,.36); }
-    .mountain { position: absolute; right: -4%; bottom: 2%; width: 98%; height: 70%; clip-path: polygon(0 73%, 23% 42%, 37% 59%, 61% 10%, 73% 29%, 84% 0, 100% 37%, 100% 100%, 0 100%); background: linear-gradient(135deg, #0b7eac, #06446f 70%); opacity: .85; }
-    .mountain::after { content: ""; position: absolute; inset: 0; background: linear-gradient(155deg, transparent 38%, rgba(2,35,58,.72) 38.5% 100%); }
-    .coffee-vessel { position: absolute; z-index: 2; right: 17%; bottom: 0; width: 255px; filter: drop-shadow(0 22px 21px rgba(0,0,0,.23)); }
-    .dripper { position: relative; width: 205px; height: 132px; margin: 0 auto -5px; border: 4px solid #e9f8fa; border-top-width: 6px; border-radius: 10px 10px 44% 44%; background: linear-gradient(115deg, rgba(123,206,225,.5), rgba(26,118,161,.23)); clip-path: polygon(0 0,100% 0,78% 100%,22% 100%); }
-    .dripper::after { content: ""; position: absolute; inset: 18px 16px 0; border-top: 1px solid rgba(255,255,255,.6); border-left: 1px solid rgba(255,255,255,.25); transform: skewX(-17deg); }
-    .carafe { position: relative; width: 170px; height: 181px; margin: 0 auto; border: 4px solid #e9f8fa; border-radius: 9px 9px 39% 39% / 9px 9px 19% 19%; background: linear-gradient(90deg, rgba(110,211,229,.26), rgba(1,52,87,.52)); }
-    .carafe::before { content: ""; position: absolute; top: -16px; left: 27px; width: 108px; height: 20px; border: 4px solid #e9f8fa; border-bottom: 0; border-radius: 50% 50% 0 0; }
-    .carafe::after { content: ""; position: absolute; right: 16px; bottom: 24px; left: 16px; height: 60px; border-radius: 3px 3px 26px 26px; background: linear-gradient(90deg, rgba(133,67,26,.84), rgba(76,33,9,.92)); }
-    .art-label { position: absolute; z-index: 3; top: 50%; right: 2%; width: 114px; padding-left: 12px; border-left: 1px solid var(--sky); color: rgba(255,255,255,.78); font-size: 10px; line-height: 1.7; letter-spacing: .1em; }
-    .art-label strong { display: block; color: var(--sky); font: 600 20px/1 "Playfair Display", serif; }
-    .scroll-line { position: absolute; bottom: 23px; left: max(24px, calc((100% - 1120px) / 2)); z-index: 2; display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,.56); font-size: 10px; letter-spacing: .15em; }
-    .scroll-line::before { content: ""; width: 38px; height: 1px; background: currentColor; }
-
-    /* Intro */
-    .intro { padding: 118px 0; background: #fff; }
-    .intro-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(45px, 8vw, 105px); align-items: center; }
-    .intro-stamp { position: relative; min-height: 355px; }
-    .stamp-circle { position: absolute; inset: 13px auto auto 0; display: grid; width: 290px; height: 290px; place-items: center; border: 1px solid #9dd7e7; border-radius: 50%; color: var(--blue); text-align: center; }
-    .stamp-circle::before { content: ""; position: absolute; inset: 14px; border: 1px dashed #a5d9e6; border-radius: 50%; }
-    .stamp-circle strong { display: block; font: 700 43px/1 "Playfair Display", serif; letter-spacing: -.04em; }
-    .stamp-circle span { display: block; margin-top: 8px; font-size: 11px; font-weight: 700; letter-spacing: .14em; }
-    .stamp-card { position: absolute; right: 0; bottom: 0; width: 216px; padding: 21px 23px; color: #fff; background: var(--blue); box-shadow: var(--shadow); }
-    .stamp-card p { margin: 0; font-size: 12px; line-height: 1.8; }
-    .stamp-card b { display: block; margin-bottom: 8px; color: var(--sky); font: 600 12px/1 "Playfair Display", serif; letter-spacing: .14em; }
-    .intro .section-copy { font-size: 16px; }
-    .intro-link { display: inline-flex; gap: 10px; margin-top: 28px; padding-bottom: 4px; border-bottom: 1px solid var(--blue); color: var(--blue); font-size: 14px; font-weight: 700; }
-
-    /* Coffees */
-    .coffee-section { padding: 110px 0 120px; background: var(--mist); }
-    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 43px; }
-    .section-head .section-copy { max-width: 35ch; margin: 0; font-size: 14px; }
-    .coffee-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 19px; }
-    .coffee-card { position: relative; min-height: 384px; overflow: hidden; color: #fff; background: var(--navy); box-shadow: var(--shadow); }
-    .coffee-card::before { content: ""; position: absolute; right: -63px; bottom: -87px; width: 238px; height: 238px; border: 1px solid rgba(255,255,255,.29); border-radius: 50%; }
-    .coffee-card::after { content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: linear-gradient(160deg, transparent 42%, rgba(0,0,0,.28)); pointer-events: none; }
-    .coffee-card:nth-child(2) { background: #106396; }
-    .coffee-card:nth-child(3) { background: #164c68; }
-    .coffee-content { position: relative; z-index: 1; display: flex; flex-direction: column; min-height: 384px; padding: 29px; }
-    .coffee-number { color: var(--sky); font: 600 13px/1 "Playfair Display", serif; letter-spacing: .08em; }
-    .coffee-origin { margin: auto 0 7px; color: rgba(255,255,255,.63); font-size: 11px; font-weight: 600; letter-spacing: .14em; }
-    .coffee-card h3 { margin: 0; font: 700 27px/1.35 "Noto Serif TC", serif; letter-spacing: .05em; }
-    .coffee-notes { margin: 11px 0 22px; color: rgba(255,255,255,.75); font-size: 13px; }
-    .coffee-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.25); }
-    .price { font-size: 14px; font-weight: 700; }
-    .add-button { padding: 5px 0; border: 0; color: #fff; background: none; font-size: 12px; font-weight: 700; letter-spacing: .07em; }
-    .add-button:hover { color: var(--sand); }
-
-    /* Brew process */
-    .brew { overflow: hidden; padding: 118px 0; background: #fff; }
-    .brew-grid { display: grid; grid-template-columns: .93fr 1.07fr; gap: clamp(44px, 9vw, 112px); align-items: center; }
-    .brew-visual { position: relative; min-height: 396px; border: 1px solid var(--line); background: linear-gradient(140deg, #f4fafb 0 50%, #e5f4f7 50%); }
-    .brew-visual::before { content: ""; position: absolute; top: 35px; left: 34px; width: 70px; height: 1px; background: var(--blue); box-shadow: 0 9px 0 var(--blue), 0 18px 0 var(--blue); }
-    .pour-ring { position: absolute; top: 71px; right: 48px; width: 240px; height: 240px; border: 35px solid rgba(12,91,149,.13); border-radius: 50%; }
-    .pour-ring::after { content: ""; position: absolute; top: 45px; left: 45px; width: 80px; height: 80px; border: 3px solid var(--blue); border-radius: 50%; }
-    .brew-v60 { position: absolute; bottom: 35px; left: 51%; width: 178px; height: 150px; border: 4px solid var(--blue); background: rgba(255,255,255,.54); clip-path: polygon(0 0,100% 0,73% 100%,27% 100%); transform: translateX(-50%); }
-    .brew-v60::before { content: ""; position: absolute; top: 14px; right: 16px; bottom: 0; left: 16px; border-left: 1px solid #8dcce0; border-right: 1px solid #8dcce0; transform: skewX(-11deg); }
-    .brew-caption { position: absolute; right: 25px; bottom: 21px; color: var(--blue); font: 600 10px/1.4 "Playfair Display", serif; letter-spacing: .13em; text-align: right; }
-    .brew-steps { display: grid; gap: 0; margin: 28px 0 0; padding: 0; list-style: none; }
-    .brew-steps li { display: grid; grid-template-columns: 43px 1fr; gap: 15px; padding: 17px 0; border-top: 1px solid var(--line); }
-    .brew-steps li:last-child { border-bottom: 1px solid var(--line); }
-    .step-no { color: var(--blue); font: 600 15px/1.7 "Playfair Display", serif; }
-    .step-copy b { display: block; font-size: 15px; }
-    .step-copy span { color: var(--muted); font-size: 13px; }
-
-    /* CTA and Footer */
-    .visit { position: relative; overflow: hidden; padding: 96px 0; color: #fff; background: var(--navy); text-align: center; }
-    .visit::before, .visit::after { content: ""; position: absolute; width: 370px; height: 370px; border: 1px solid rgba(117,198,232,.21); border-radius: 50%; }
-    .visit::before { top: -225px; left: -90px; }
-    .visit::after { right: -125px; bottom: -235px; }
-    .visit .wrap { position: relative; z-index: 1; }
-    .visit .eyebrow { justify-content: center; color: var(--sky); }
-    .visit .section-title { font-size: clamp(30px, 4vw, 45px); }
-    .visit p:not(.eyebrow) { max-width: 48ch; margin: 19px auto 28px; color: rgba(255,255,255,.73); }
-    .subscribe { display: flex; max-width: 500px; margin: 0 auto; border: 1px solid rgba(255,255,255,.5); }
-    .subscribe input { min-width: 0; flex: 1; padding: 13px 17px; border: 0; outline: none; color: #fff; background: transparent; }
-    .subscribe input::placeholder { color: rgba(255,255,255,.55); }
-    .subscribe button { padding: 0 22px; border: 0; color: var(--navy); background: var(--sand); font-size: 13px; font-weight: 700; white-space: nowrap; }
-    .subscribe button:hover { background: #f0c77f; }
-    footer { color: rgba(255,255,255,.67); background: #031c31; }
-    .footer-top { display: grid; grid-template-columns: 1.7fr 1fr 1fr; gap: 40px; padding: 58px 0 38px; }
-    .footer-brand { color: #fff; }
-    .footer-brand p { max-width: 31ch; margin: 16px 0 0; font-size: 13px; }
-    .footer-heading { margin: 0 0 15px; color: var(--sky); font-size: 11px; font-weight: 700; letter-spacing: .14em; }
-    .footer-list { margin: 0; padding: 0; list-style: none; font-size: 13px; }
-    .footer-list li + li { margin-top: 8px; }
-    .footer-list a:hover { color: #fff; }
-    .footer-bottom { display: flex; justify-content: space-between; gap: 24px; padding: 17px 0; border-top: 1px solid rgba(255,255,255,.14); color: rgba(255,255,255,.43); font-size: 11px; letter-spacing: .05em; }
-
-    .toast { position: fixed; right: 22px; bottom: 22px; z-index: 20; max-width: min(330px, calc(100% - 44px)); padding: 13px 18px; border-left: 3px solid var(--sand); color: #fff; background: var(--navy); box-shadow: var(--shadow); opacity: 0; pointer-events: none; transform: translateY(12px); transition: opacity .25s, transform .25s; font-size: 13px; }
-    .toast.show { opacity: 1; transform: translateY(0); }
-
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    @media (max-width: 820px) {
-      .nav { min-height: 68px; }
-      .menu-toggle { display: block; width: 42px; height: 42px; font-size: 23px; }
-      .nav-links { position: absolute; top: 68px; right: 0; left: 0; display: grid; gap: 0; max-height: 0; overflow: hidden; background: #05233c; transition: max-height .27s ease; }
-      .nav-links.open { max-height: 300px; border-top: 1px solid rgba(255,255,255,.12); }
-      .nav-links a { padding: 13px 24px; border-bottom: 1px solid rgba(255,255,255,.09); }
-      .nav-links .nav-cta { margin: 11px 24px; text-align: center; }
-      .hero, .hero-grid { min-height: 710px; }
-      .hero-grid { grid-template-columns: 1fr; padding-top: 115px; }
-      .hero-art { min-height: 278px; margin-top: -35px; }
-      .sun { right: 14%; width: 114px; height: 114px; }
-      .mountain { width: 82%; height: 92%; }
-      .coffee-vessel { right: 15%; transform: scale(.72); transform-origin: bottom right; }
-      .art-label { top: 44%; right: 1%; }
-      .intro-grid, .brew-grid { grid-template-columns: 1fr; }
-      .intro-stamp { max-width: 510px; width: 100%; }
-      .coffee-grid { grid-template-columns: 1fr 1fr; }
-      .coffee-card:last-child { grid-column: span 2; }
-      .footer-top { grid-template-columns: 1.4fr 1fr; }
-      .footer-brand { grid-column: span 2; }
+      background: rgba(212, 175, 55, 0.15);
+      display: grid;
+      place-items: center;
+      color: var(--accent-gold);
     }
 
-    @media (max-width: 560px) {
-      .wrap { width: min(100% - 34px, 1120px); }
-      .hero, .hero-grid { min-height: 680px; }
-      .hero-grid { padding-top: 100px; padding-bottom: 48px; }
-      .hero-title { font-size: 40px; }
-      .hero-lede { margin: 18px 0 23px; font-size: 14px; }
-      .hero-art { min-height: 240px; }
-      .art-label { display: none; }
-      .scroll-line { bottom: 12px; left: 17px; }
-      .intro, .coffee-section, .brew { padding: 76px 0; }
-      .stamp-circle { width: 245px; height: 245px; }
-      .stamp-card { width: 185px; padding: 16px; }
-      .section-head { display: block; }
-      .section-head .section-copy { margin-top: 15px; }
-      .coffee-grid { grid-template-columns: 1fr; }
-      .coffee-card, .coffee-card:last-child { grid-column: auto; min-height: 330px; }
-      .coffee-content { min-height: 330px; }
-      .brew-visual { min-height: 310px; }
-      .pour-ring { top: 48px; right: 25px; width: 190px; height: 190px; border-width: 27px; }
-      .visit { padding: 76px 0; }
-      .subscribe { display: block; border: 0; }
-      .subscribe input { width: 100%; border: 1px solid rgba(255,255,255,.5); }
-      .subscribe button { width: 100%; min-height: 48px; margin-top: 9px; }
-      .footer-top { grid-template-columns: 1fr; gap: 30px; }
-      .footer-brand { grid-column: auto; }
-      .footer-bottom { display: block; }
-      .footer-bottom span + span { display: block; margin-top: 6px; }
+    /* Features / Brand Pillars */
+    .features-section {
+      padding: 100px 0;
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-dark);
+      border-bottom: 1px solid var(--border-dark);
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
-      .reveal { opacity: 1; transform: none; }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-dark);
+      border-radius: 12px;
+      padding: 36px 30px;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-gold);
+      box-shadow: var(--shadow-gold);
+    }
+
+    .feature-icon-box {
+      width: 58px;
+      height: 58px;
+      border-radius: 10px;
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      display: grid;
+      place-items: center;
+      color: var(--accent-gold);
+      margin-bottom: 24px;
+      font-size: 1.4rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: var(--text-white);
+    }
+
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.75;
+    }
+
+    /* Products / Store Catalog (吸引客消費核心) */
+    .products-section {
+      padding: 110px 0;
+      position: relative;
+    }
+
+    .product-filter {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 8px 22px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-dark);
+      border-radius: 30px;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: rgba(212, 175, 55, 0.15);
+      border-color: var(--accent-gold);
+      color: var(--accent-gold-light);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 32px;
+    }
+
+    .product-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-dark);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-gold);
+      box-shadow: var(--shadow-gold);
+    }
+
+    .product-media {
+      position: relative;
+      height: 240px;
+      background: #111;
+      overflow: hidden;
+    }
+
+    .product-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .product-card:hover .product-media img {
+      transform: scale(1.08);
+    }
+
+    .product-pill {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(10, 10, 12, 0.85);
+      border: 1px solid var(--border-gold);
+      color: var(--accent-gold);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      backdrop-filter: blur(6px);
+    }
+
+    .product-sca {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: var(--accent-gold);
+      color: #0b0b0e;
+      font-size: 0.75rem;
+      font-weight: 800;
+      font-family: 'Cinzel', serif;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .product-info {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-origin {
+      font-size: 0.75rem;
+      color: var(--accent-gold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-family: 'Cinzel', serif;
+      margin-bottom: 6px;
+    }
+
+    .product-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .product-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 10px 12px;
+      border-radius: 6px;
+      margin: 12px 0;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .product-specs span strong {
+      color: var(--text-white);
+    }
+
+    .tasting-notes {
+      margin-bottom: 20px;
+    }
+
+    .notes-title {
+      font-size: 0.75rem;
+      color: var(--text-dark);
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .notes-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .chip {
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.18);
+      color: var(--accent-gold-light);
+      border-radius: 4px;
+    }
+
+    .product-bottom {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .product-pricing {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price-current {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      font-family: 'Cinzel', serif;
+    }
+
+    .price-original {
+      font-size: 0.78rem;
+      color: var(--text-dark);
+      text-decoration: line-through;
+    }
+
+    .add-to-cart-btn {
+      padding: 9px 18px;
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold-light);
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .add-to-cart-btn:hover {
+      background: var(--accent-gold);
+      color: #0b0b0e;
+    }
+
+    /* Special Deal / Call to Action Banner */
+    .deal-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #131215 0%, #1f1b13 50%, #121215 100%);
+      border-top: 1px solid var(--border-gold);
+      border-bottom: 1px solid var(--border-gold);
+      position: relative;
+    }
+
+    .deal-box {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .deal-content h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin-bottom: 16px;
+    }
+
+    .deal-content p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 24px;
+      line-height: 1.8;
+    }
+
+    .promo-code-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      background: rgba(10, 10, 12, 0.7);
+      border: 1px dashed var(--accent-gold);
+      padding: 12px 24px;
+      border-radius: 8px;
+      margin-bottom: 28px;
+    }
+
+    .promo-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .promo-code {
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      letter-spacing: 0.15em;
+    }
+
+    .deal-perks {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .perk-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-dark);
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .perk-icon {
+      font-size: 1.5rem;
+      color: var(--accent-gold);
+      margin-bottom: 8px;
+    }
+
+    .perk-item h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .perk-item p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Interactive Brew Calculator (吸引客互動與咖啡教學) */
+    .brew-tool-section {
+      padding: 100px 0;
+      background: var(--bg-primary);
+    }
+
+    .brew-calculator {
+      background: var(--bg-card);
+      border: 1px solid var(--border-dark);
+      border-radius: 14px;
+      padding: 40px;
+      max-width: 860px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .calc-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .control-group label {
+      display: block;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .control-group input[type="range"] {
+      width: 100%;
+      height: 6px;
+      background: #272730;
+      border-radius: 3px;
+      outline: none;
+      accent-color: var(--accent-gold);
+    }
+
+    .control-value-display {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .calc-results {
+      background: rgba(10, 10, 12, 0.6);
+      border: 1px solid var(--border-gold);
+      border-radius: 10px;
+      padding: 28px;
+      text-align: center;
+    }
+
+    .result-highlight {
+      font-family: 'Cinzel', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .result-sub {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      margin-bottom: 24px;
+    }
+
+    .brew-timeline {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      text-align: left;
+      font-size: 0.78rem;
+      border-top: 1px solid var(--border-dark);
+      padding-top: 18px;
+    }
+
+    .timeline-step strong {
+      display: block;
+      color: var(--accent-gold);
+      font-family: 'Cinzel', serif;
+      margin-bottom: 2px;
+    }
+
+    /* Testimonials / Social Proof */
+    .reviews-section {
+      padding: 100px 0;
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .review-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-dark);
+      border-radius: 10px;
+      padding: 30px;
+      position: relative;
+    }
+
+    .stars {
+      color: var(--accent-gold);
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+    }
+
+    .review-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .reviewer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .reviewer-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--border-dark);
+      border: 1px solid var(--border-gold);
+      display: grid;
+      place-items: center;
+      color: var(--accent-gold);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .reviewer-info h4 {
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .reviewer-info span {
+      font-size: 0.75rem;
+      color: var(--text-dark);
+    }
+
+    /* Shopping Cart Drawer */
+    .cart-drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(4px);
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .cart-drawer-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: min(440px, 100%);
+      height: 100%;
+      background: var(--bg-secondary);
+      border-left: 1px solid var(--border-gold);
+      z-index: 2001;
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+      display: flex;
+      flex-direction: column;
+      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.7);
+    }
+
+    .cart-drawer.active {
+      transform: translateX(0);
+    }
+
+    .drawer-header {
+      padding: 24px;
+      border-bottom: 1px solid var(--border-dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .drawer-header h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-white);
+    }
+
+    .close-drawer-btn {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .close-drawer-btn:hover {
+      color: var(--accent-gold);
+    }
+
+    .drawer-body {
+      padding: 24px;
+      overflow-y: auto;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .cart-item {
+      display: flex;
+      gap: 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-dark);
+      border-radius: 8px;
+      padding: 12px;
+      align-items: center;
+    }
+
+    .cart-item-info {
+      flex-grow: 1;
+    }
+
+    .cart-item-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .cart-item-price {
+      font-size: 0.85rem;
+      color: var(--accent-gold);
+      font-weight: 700;
+    }
+
+    .cart-item-qty {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .qty-btn {
+      width: 26px;
+      height: 26px;
+      border-radius: 4px;
+      background: #272730;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 0.9rem;
+    }
+
+    .drawer-footer {
+      padding: 24px;
+      border-top: 1px solid var(--border-dark);
+      background: var(--bg-card);
+    }
+
+    .drawer-subtotal {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .drawer-subtotal span:last-child {
+      color: var(--accent-gold);
+      font-family: 'Cinzel', serif;
+    }
+
+    /* Toast Notification */
+    .toast-container {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 3000;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .toast {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      color: var(--text-white);
+      padding: 14px 22px;
+      border-radius: 6px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      animation: slideIn 0.3s ease forwards;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #060608;
+      border-top: 1px solid var(--border-dark);
+      padding: 80px 0 30px;
+      position: relative;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr 0.8fr 1fr;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .footer-brand p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.8;
+      margin: 18px 0 24px;
+      max-width: 320px;
+    }
+
+    .footer-col h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-gold);
+      padding-left: 4px;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      gap: 10px;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      margin-bottom: 12px;
+    }
+
+    .footer-bottom {
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.82rem;
+      color: var(--text-dark);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero-grid, .deal-box, .calc-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-visual {
+        order: -1;
+      }
+      .features-grid, .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+      }
+      .mobile-toggle {
+        display: block;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+      .floating-badge {
+        display: none;
+      }
+      .deal-perks {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="site-header" id="top">
-    <nav class="nav wrap" aria-label="主要導覽">
-      <a class="brand" href="#top" aria-label="回到藍天咖啡首頁">
-        <span class="brand-mark">B</span>
-        <span>藍天咖啡<small>BLUE SKY COFFEE</small></span>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-emblem">
+          <span>ZL</span>
+        </div>
+        <div class="brand-text">
+          <h1>ZL咖啡</h1>
+          <p>SPECIALTY COFFEE</p>
+        </div>
       </a>
-      <button class="menu-toggle" type="button" aria-label="開啟導覽選單" aria-expanded="false" aria-controls="navLinks">☰</button>
-      <div class="nav-links" id="navLinks">
-        <a href="#story">我們的堅持</a>
-        <a href="#coffee">本季選豆</a>
-        <a href="#brew">沖煮日常</a>
-        <a class="nav-cta" href="#visit">訂閱風味通信</a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#about">品牌初衷</a></li>
+          <li><a href="#beans">嚴選頂級豆</a></li>
+          <li><a href="#deal">尊榮禮遇</a></li>
+          <li><a href="#brew">手沖算式</a></li>
+          <li><a href="#reviews">品味評價</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="cart-btn-wrap">
+          <button class="cart-btn" id="openCartBtn" aria-label="查看購物車">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="cart-badge" id="cartCountBadge">0</span>
+          </button>
+        </div>
+        <a href="#beans" class="btn btn-gold btn-sm">立即選購</a>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="開啟選單">☰</button>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="hero" aria-labelledby="heroTitle">
-      <div class="hero-grid wrap">
-        <div class="reveal">
-          <p class="eyebrow">HAND BREWED · SLOWLY ROASTED</p>
-          <h1 class="hero-title" id="heroTitle">讓風味，<br>在<span class="blue">藍天</span>下<br>慢慢抵達。</h1>
-          <p class="hero-lede">藍天咖啡為喜歡手沖的你，挑選值得細品的單一產區咖啡豆。從第一縷花香，到最後一口回甘，每一杯都有自己的晴朗天氣。</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#coffee">探索本季風味 <span class="arrow">→</span></a>
-            <a class="button button-outline" href="#story">認識藍天</a>
+  <!-- Hero Section (推廣咖啡 & 頂級豆風格) -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge-wrap">
+          <span class="badge-gold">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            SCA 90+ 頂級莊園單品選拔
+          </span>
+        </div>
+        <h1 class="hero-title">
+          以黑色純粹美學<br>
+          <span class="gradient-gold">萃煉極致頂級咖啡</span>
+        </h1>
+        <p class="hero-desc">
+          為每一位咖啡喜好者嚴選全球最高海拔莊園生豆。極深底蘊、層次豐富的花果香氣，在黑金交織的光影與時間中，開啟<strong>尊榮無瑕的感官饗宴</strong>。
+        </p>
+
+        <div class="hero-actions">
+          <a href="#beans" class="btn btn-gold">
+            探索頂級豆單
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#deal" class="btn btn-outline">新客首購 88 折優惠</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num">90+</span>
+            <span class="stat-label">SCA 頂級卓越評分</span>
           </div>
-          <p class="hero-note">TAIPEI · TAIWAN · EST. 2018</p>
-        </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="sun"></div>
-          <div class="mountain"></div>
-          <div class="coffee-vessel"><div class="dripper"></div><div class="carafe"></div></div>
-          <p class="art-label"><strong>92°C</strong>理想水溫<br>細細喚醒香氣</p>
-        </div>
-      </div>
-      <p class="scroll-line">SCROLL TO DISCOVER</p>
-    </section>
-
-    <section class="intro" id="story" aria-labelledby="storyTitle">
-      <div class="intro-grid wrap">
-        <div class="intro-stamp reveal" aria-hidden="true">
-          <div class="stamp-circle"><div><strong>慢一點，<br>更清楚。</strong><span>LET THE FLAVOUR SPEAK</span></div></div>
-          <div class="stamp-card"><b>BLUE SKY NOTE</b><p>一杯好咖啡，從來不是匆忙完成的事。</p></div>
-        </div>
-        <div class="reveal">
-          <p class="eyebrow">OUR PHILOSOPHY</p>
-          <h2 class="section-title" id="storyTitle">在一杯之間，<br>看見產地的<em>晴朗</em>。</h2>
-          <p class="section-copy">我們相信，精品咖啡的美好不該被複雜掩蓋。以小批次烘焙留住豆子的個性，再用穩定、誠實的手沖，讓風土與時間在杯中變得清晰。</p>
-          <p class="section-copy">給懂得放慢腳步的人，也給每一個想重新認識咖啡的人。</p>
-          <a class="intro-link" href="#brew">看看我們如何沖煮 <span>→</span></a>
+          <div class="stat-item">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">阿拉比卡高海拔純豆</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">48H</span>
+            <span class="stat-label">接單現烘 鮮度極限</span>
+          </div>
         </div>
       </div>
-    </section>
 
-    <section class="coffee-section" id="coffee" aria-labelledby="coffeeTitle">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div><p class="eyebrow">SEASONAL SELECTION</p><h2 class="section-title" id="coffeeTitle">今天，想喝哪一片<em>藍天</em>？</h2></div>
-          <p class="section-copy">三款當季單品，為不同的晨光、午後與靜夜而選。</p>
-        </div>
-        <div class="coffee-grid">
-          <article class="coffee-card reveal">
-            <div class="coffee-content">
-              <span class="coffee-number">01 / BRIGHT</span>
-              <p class="coffee-origin">ETHIOPIA · YIRGACHEFFE</p>
-              <h3>衣索比亞<br>耶加雪菲</h3>
-              <p class="coffee-notes">白花、佛手柑、蜂蜜</p>
-              <div class="coffee-bottom"><span class="price">NT$ 520 / 200g</span><button class="add-button" type="button" data-coffee="衣索比亞・耶加雪菲">加入收藏 ＋</button></div>
+      <!-- Hero Visual Showcase -->
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800&auto=format&fit=crop" alt="ZL頂級手沖咖啡" loading="eager">
+            <span class="hero-tag">本月奢華主打</span>
+          </div>
+          <h2 class="hero-card-title">巴拿馬翡翠莊園 · 綠標藝妓</h2>
+          <div class="hero-card-flavor">
+            <span class="flavor-tag">茉莉花香</span>
+            <span class="flavor-tag">佛手柑</span>
+            <span class="flavor-tag">水蜜桃甜感</span>
+            <span class="flavor-tag">日曬處理</span>
+          </div>
+          <div class="hero-card-bottom">
+            <div class="hero-price">
+              NT$ 980 <small>NT$ 1,200</small>
             </div>
-          </article>
-          <article class="coffee-card reveal">
-            <div class="coffee-content">
-              <span class="coffee-number">02 / JUICY</span>
-              <p class="coffee-origin">KENYA · KIRINYAGA</p>
-              <h3>肯亞<br>祈安布</h3>
-              <p class="coffee-notes">黑醋栗、洛神、葡萄柚</p>
-              <div class="coffee-bottom"><span class="price">NT$ 580 / 200g</span><button class="add-button" type="button" data-coffee="肯亞・祈安布">加入收藏 ＋</button></div>
-            </div>
-          </article>
-          <article class="coffee-card reveal">
-            <div class="coffee-content">
-              <span class="coffee-number">03 / ROUND</span>
-              <p class="coffee-origin">COLOMBIA · HUILA</p>
-              <h3>哥倫比亞<br>慧蘭</h3>
-              <p class="coffee-notes">黃桃、焦糖、可可尾韻</p>
-              <div class="coffee-bottom"><span class="price">NT$ 460 / 200g</span><button class="add-button" type="button" data-coffee="哥倫比亞・慧蘭">加入收藏 ＋</button></div>
-            </div>
-          </article>
+            <button class="btn btn-gold btn-sm" onclick="addToCart('巴拿馬翡翠莊園 · 綠標藝妓', 980)">
+              搶先品嚐
+            </button>
+          </div>
+        </div>
+
+        <div class="floating-badge">
+          <div class="badge-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </div>
+          <div>
+            <strong style="font-size: 0.85rem; display: block;">手工雙道挑豆</strong>
+            <span style="font-size: 0.72rem; color: var(--text-muted);">零瑕疵豆保證</span>
+          </div>
         </div>
       </div>
-    </section>
-
-    <section class="brew" id="brew" aria-labelledby="brewTitle">
-      <div class="brew-grid wrap">
-        <div class="brew-visual reveal" aria-hidden="true">
-          <div class="pour-ring"></div><div class="brew-v60"></div><p class="brew-caption">V60 / 15G : 240ML<br>2'45''</p>
-        </div>
-        <div class="reveal">
-          <p class="eyebrow">A QUIET RITUAL</p>
-          <h2 class="section-title" id="brewTitle">把時間交給水，<br>讓咖啡說<em>自己的話</em>。</h2>
-          <p class="section-copy">不需要繁複儀式，只要三個安靜的步驟。每一個參數，都是為了讓你更靠近豆子原本的樣子。</p>
-          <ol class="brew-steps">
-            <li><span class="step-no">01</span><span class="step-copy"><b>研磨，先聞見期待</b><span>15g 中細研磨，讓香氣從指尖開始展開。</span></span></li>
-            <li><span class="step-no">02</span><span class="step-copy"><b>悶蒸，等待第一個呼吸</b><span>以 92°C 熱水浸潤 30 秒，喚醒甜感與層次。</span></span></li>
-            <li><span class="step-no">03</span><span class="step-copy"><b>注水，保持自己的節奏</b><span>穩定畫圈，讓 240ml 的清澈在 2 分 45 秒完成。</span></span></li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <section class="visit" id="visit" aria-labelledby="visitTitle">
-      <div class="wrap reveal">
-        <p class="eyebrow">THE BLUE SKY LETTER</p>
-        <h2 class="section-title" id="visitTitle">把下一杯好咖啡，<br>寄到你的日常裡。</h2>
-        <p>每月一封風味通信，分享新豆、沖煮靈感與只給會員的小小驚喜。</p>
-        <form class="subscribe" id="subscribeForm">
-          <input type="email" aria-label="電子郵件地址" placeholder="留下你的 Email" required>
-          <button type="submit">訂閱風味通信</button>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-top wrap">
-      <div class="footer-brand"><a class="brand" href="#top"><span class="brand-mark">B</span><span>藍天咖啡<small>BLUE SKY COFFEE</small></span></a><p>為喜愛手沖咖啡的你，留下一段慢慢品味、微微放晴的時間。</p></div>
-      <div><p class="footer-heading">EXPLORE</p><ul class="footer-list"><li><a href="#story">我們的堅持</a></li><li><a href="#coffee">本季選豆</a></li><li><a href="#brew">沖煮日常</a></li></ul></div>
-      <div><p class="footer-heading">CONTACT</p><ul class="footer-list"><li><a href="mailto:hello@bluesky.coffee">hello@bluesky.coffee</a></li><li>台北市大安區晴朗路 18 號</li><li>每日 10:00 — 19:00</li></ul></div>
     </div>
-    <div class="footer-bottom wrap"><span>© 2026 BLUE SKY COFFEE. ALL RIGHTS RESERVED.</span><span>BREW SLOW · LIVE BRIGHT</span></div>
+  </section>
+
+  <!-- Brand Pillars (推廣咖啡用途 & 品牌風格) -->
+  <section class="features-section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle en-title">CRAFTSMANSHIP & PASSION</span>
+        <h2 class="section-title">只為純粹，堅持頂級標準</h2>
+        <p class="section-desc">
+          ZL咖啡專注於探索世界最頂尖的微型產區。從生豆採摘、溫控烘焙到杯測品評，每一步都是為真正的咖啡喜好者而生。
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+              <path d="M2 12h20"></path>
+            </svg>
+          </div>
+          <h3>100% 莊園微批次生豆</h3>
+          <p>
+            直接採購自衣索比亞、巴拿馬、哥倫比亞等高海拔名莊，恪守當季現採原則，保留咖啡豆最明亮飽滿的風土芳香。
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
+            </svg>
+          </div>
+          <h3>微壓精準控溫烘焙</h3>
+          <p>
+            採用頂級德國半熱風烘焙機，針對每款豆種設計專屬烘焙曲線。精確鎖住花果乾香，釋放清爽甜感與絲滑尾韻。
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <h3>接單後 48 小時烘焙</h3>
+          <p>
+            絕不販售預先囤積的陳豆。下單後新鮮烘焙並充氮包裝，確保遞送至您手中時正值最佳養豆與熟成風味巔峰。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Beans Catalog (吸引客消費咖啡) -->
+  <section class="products-section" id="beans">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle en-title">COLLECTION & RESERVE</span>
+        <h2 class="section-title">ZL 嚴選頂級咖啡豆單</h2>
+        <p class="section-desc">
+          每一款咖啡豆皆標註風味輪指標與莊園來源，選一包適合您今日心情的精品，享受專屬的咖啡時刻。
+        </p>
+      </div>
+
+      <!-- Product Filter Tabs -->
+      <div class="product-filter">
+        <button class="filter-btn active" onclick="filterProducts('all', this)">全部豆款</button>
+        <button class="filter-btn" onclick="filterProducts('geisha', this)">藝妓尊爵系列</button>
+        <button class="filter-btn" onclick="filterProducts('fruity', this)">花果香淺焙</button>
+        <button class="filter-btn" onclick="filterProducts('rich', this)">醇厚黑金系列</button>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="productContainer">
+        <!-- Item 1: Geisha -->
+        <div class="product-card" data-category="geisha">
+          <div class="product-media">
+            <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?q=80&w=800&auto=format&fit=crop" alt="巴拿馬翡翠莊園 綠標藝妓">
+            <span class="product-pill">頂級日曬</span>
+            <span class="product-sca">SCA 93.5</span>
+          </div>
+          <div class="product-info">
+            <span class="product-origin">PANAMA BOQUETE · GEISHA</span>
+            <h3 class="product-title">巴拿馬翡翠莊園 綠標藝妓</h3>
+            <div class="product-specs">
+              <span>烘焙：<strong>淺焙 (Light)</strong></span>
+              <span>海拔：<strong>1,750m</strong></span>
+            </div>
+            <div class="tasting-notes">
+              <div class="notes-title">杯測風味筆記</div>
+              <div class="notes-chips">
+                <span class="chip">佛手柑</span>
+                <span class="chip">茉莉花</span>
+                <span class="chip">水蜜桃</span>
+                <span class="chip">荔枝蜜</span>
+              </div>
+            </div>
+            <div class="product-bottom">
+              <div class="product-pricing">
+                <span class="price-current">NT$ 980</span>
+                <span class="price-original">NT$ 1,200</span>
+              </div>
+              <button class="add-to-cart-btn" onclick="addToCart('巴拿馬翡翠莊園 綠標藝妓', 980)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                </svg>
+                加入購物車
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2: Ethiopia Gesha Village -->
+        <div class="product-card" data-category="fruity">
+          <div class="product-media">
+            <img src="https://images.unsplash.com/photo-1610632380989-680fe40816c6?q=80&w=800&auto=format&fit=crop" alt="衣索比亞 瑰夏村 查卡批次">
+            <span class="product-pill">精緻水洗</span>
+            <span class="product-sca">SCA 91.5</span>
+          </div>
+          <div class="product-info">
+            <span class="product-origin">ETHIOPIA BENCH MAJI</span>
+            <h3 class="product-title">衣索比亞 瑰夏村 查卡原生種</h3>
+            <div class="product-specs">
+              <span>烘焙：<strong>極淺焙 (Nordic)</strong></span>
+              <span>海拔：<strong>2,000m</strong></span>
+            </div>
+            <div class="tasting-notes">
+              <div class="notes-title">杯測風味筆記</div>
+              <div class="notes-chips">
+                <span class="chip">橙花</span>
+                <span class="chip">杏桃乾</span>
+                <span class="chip">伯爵茶感</span>
+                <span class="chip">檸檬糖</span>
+              </div>
+            </div>
+            <div class="product-bottom">
+              <div class="product-pricing">
+                <span class="price-current">NT$ 620</span>
+                <span class="price-original">NT$ 750</span>
+              </div>
+              <button class="add-to-cart-btn" onclick="addToCart('衣索比亞 瑰夏村 查卡原生種', 620)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                </svg>
+                加入購物車
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3: Colombia Rum Barrel -->
+        <div class="product-card" data-category="geisha">
+          <div class="product-media">
+            <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=800&auto=format&fit=crop" alt="哥倫比亞 聖荷西莊園 蘭姆酒桶發酵">
+            <span class="product-pill">橡木桶陳釀發酵</span>
+            <span class="product-sca">SCA 92.0</span>
+          </div>
+          <div class="product-info">
+            <span class="product-origin">COLOMBIA CALDAS</span>
+            <h3 class="product-title">哥倫比亞 聖荷西莊園 蘭姆酒桶</h3>
+            <div class="product-specs">
+              <span>烘焙：<strong>中焙 (Medium)</strong></span>
+              <span>海拔：<strong>1,800m</strong></span>
+            </div>
+            <div class="tasting-notes">
+              <div class="notes-title">杯測風味筆記</div>
+              <div class="notes-chips">
+                <span class="chip">橡木蘭姆酒</span>
+                <span class="chip">黑巧克力</span>
+                <span class="chip">香草奶酪</span>
+                <span class="chip">威士忌甜感</span>
+              </div>
+            </div>
+            <div class="product-bottom">
+              <div class="product-pricing">
+                <span class="price-current">NT$ 580</span>
+                <span class="price-original">NT$ 680</span>
+              </div>
+              <button class="add-to-cart-btn" onclick="addToCart('哥倫比亞 聖荷西莊園 蘭姆酒桶', 580)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                </svg>
+                加入購物車
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4: ZL Signature Blend -->
+        <div class="product-card" data-category="rich">
+          <div class="product-media">
+            <img src="https://images.unsplash.com/photo-1518832553480-cd0e625ed3e6?q=80&w=800&auto=format&fit=crop" alt="ZL 頂級黑金招牌配方豆">
+            <span class="product-pill">獨家黃金比例</span>
+            <span class="product-sca">SCA 89.5</span>
+          </div>
+          <div class="product-info">
+            <span class="product-origin">ZL MASTER HOUSE BLEND</span>
+            <h3 class="product-title">ZL 招牌頂級黑金特調配方</h3>
+            <div class="product-specs">
+              <span>烘焙：<strong>中深焙 (City+)</strong></span>
+              <span>適用：<strong>義式 / 摩卡壺 / 手沖</strong></span>
+            </div>
+            <div class="tasting-notes">
+              <div class="notes-title">杯測風味筆記</div>
+              <div class="notes-chips">
+                <span class="chip">烤堅果脆片</span>
+                <span class="chip">焦糖瑪琪朵</span>
+                <span class="chip">深黑可可</span>
+                <span class="chip">濃稠奶油感</span>
+              </div>
+            </div>
+            <div class="product-bottom">
+              <div class="product-pricing">
+                <span class="price-current">NT$ 480</span>
+                <span class="price-original">NT$ 550</span>
+              </div>
+              <button class="add-to-cart-btn" onclick="addToCart('ZL 招牌頂級黑金特調配方', 480)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                </svg>
+                加入購物車
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5: Ethiopia Yirgacheffe -->
+        <div class="product-card" data-category="fruity">
+          <div class="product-media">
+            <img src="https://images.unsplash.com/photo-1509785307050-d4066910ec1e?q=80&w=800&auto=format&fit=crop" alt="耶加雪菲 歌迪貝 蜜處理">
+            <span class="product-pill">特殊黃蜜處理</span>
+            <span class="product-sca">SCA 91.0</span>
+          </div>
+          <div class="product-info">
+            <span class="product-origin">ETHIOPIA GEDEB</span>
+            <h3 class="product-title">衣索比亞 耶加雪菲 歌迪貝</h3>
+            <div class="product-specs">
+              <span>烘焙：<strong>淺中焙 (Cinnamon)</strong></span>
+              <span>海拔：<strong>2,100m</strong></span>
+            </div>
+            <div class="tasting-notes">
+              <div class="notes-title">杯測風味筆記</div>
+              <div class="notes-chips">
+                <span class="chip">白桃</span>
+                <span class="chip">藍莓糖漿</span>
+                <span class="chip">百香果</span>
+                <span class="chip">綠茶尾韻</span>
+              </div>
+            </div>
+            <div class="product-bottom">
+              <div class="product-pricing">
+                <span class="price-current">NT$ 520</span>
+                <span class="price-original">NT$ 600</span>
+              </div>
+              <button class="add-to-cart-btn" onclick="addToCart('衣索比亞 耶加雪菲 歌迪貝', 520)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                </svg>
+                加入購物車
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 6: Grand Tasting Gift Box (吸引首購促銷爆款) -->
+        <div class="product-card" data-category="geisha rich">
+          <div class="product-media">
+            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=800&auto=format&fit=crop" alt="ZL 頂級尊榮品鑑禮盒 4入組">
+            <span class="product-pill" style="background: var(--accent-gold); color: #000;">★ 爆款首推</span>
+            <span class="product-sca">全明星組</span>
+          </div>
+          <div class="product-info">
+            <span class="product-origin">ZL TASTING FLIGHT BOX</span>
+            <h3 class="product-title">ZL 尊榮品鑑嚐鮮禮盒 (4款豆各60g)</h3>
+            <div class="product-specs">
+              <span>內容：<strong>藝妓+瑰夏+酒桶+黑金</strong></span>
+              <span>加贈：<strong>專業金杯沖煮風味卡</strong></span>
+            </div>
+            <div class="tasting-notes">
+              <div class="notes-title">組合特色</div>
+              <div class="notes-chips">
+                <span class="chip">一次滿足</span>
+                <span class="chip">免運優惠</span>
+                <span class="chip">送禮自用首選</span>
+              </div>
+            </div>
+            <div class="product-bottom">
+              <div class="product-pricing">
+                <span class="price-current">NT$ 888</span>
+                <span class="price-original">NT$ 1,280</span>
+              </div>
+              <button class="add-to-cart-btn" onclick="addToCart('ZL 尊榮品鑑嚐鮮禮盒 4入組', 888)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                </svg>
+                搶購禮盒
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Special Deal / Promotion Section (吸引客消費咖啡) -->
+  <section class="deal-section" id="deal">
+    <div class="container deal-box">
+      <div class="deal-content">
+        <span class="badge-gold">LIMITED PRIVILEGE</span>
+        <h2 style="margin-top: 14px;">新客尊享 · 頂級咖啡體驗禮遇</h2>
+        <p>
+          為了讓更多咖啡喜好者品嚐到真正的莊園珍品，ZL咖啡推出新會員首購特別優惠。立即領取專屬折扣碼，單筆消費享 88 折優惠，消費滿 NT$ 1,200 再享黑貓宅急便免運直送！
+        </p>
+
+        <div class="promo-code-card">
+          <div>
+            <div class="promo-label">結帳輸入優惠代碼</div>
+            <div class="promo-code">ZLCOFFEE88</div>
+          </div>
+          <button class="btn btn-gold btn-sm" onclick="copyPromoCode('ZLCOFFEE88')">複製優惠碼</button>
+        </div>
+
+        <div class="hero-actions" style="margin-bottom: 0;">
+          <a href="#beans" class="btn btn-gold">挑選咖啡豆享折扣</a>
+        </div>
+      </div>
+
+      <div class="deal-perks">
+        <div class="perk-item">
+          <div class="perk-icon">🚚</div>
+          <h4>滿額極速免運</h4>
+          <p>單筆滿 NT$ 1,200 全台冷藏/常溫免運直送到府</p>
+        </div>
+        <div class="perk-item">
+          <div class="perk-icon">🎁</div>
+          <h4>隨箱贈限量試飲包</h4>
+          <p>每次訂購即附贈一包當季私藏生豆試飲掛耳包</p>
+        </div>
+        <div class="perk-item">
+          <div class="perk-icon">💎</div>
+          <h4>尊爵會員每月直送</h4>
+          <p>訂閱方案每月精選 2 包產地微批次，低至 75 折</p>
+        </div>
+        <div class="perk-item">
+          <div class="perk-icon">🛡️</div>
+          <h4>100% 新鮮滿意保證</h4>
+          <p>烘焙日期透明打印，開袋香氣不滿意退換無憂</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Golden Ratio Brew Calculator (推廣咖啡文化) -->
+  <section class="brew-tool-section" id="brew">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle en-title">GOLDEN CUP CALCULATOR</span>
+        <h2 class="section-title">手沖金杯互動萃取計算機</h2>
+        <p class="section-desc">
+          極致咖啡豆需要精準比例釋放魅力。滑動選擇您的咖啡粉克數，ZL咖啡為您精算完美的注水量與注水時間節奏。
+        </p>
+      </div>
+
+      <div class="brew-calculator">
+        <div class="calc-grid">
+          <div class="calc-controls">
+            <div class="control-group">
+              <label for="coffeeDose">咖啡粉用量 (g)：<strong id="doseValue" class="text-gold">15 g</strong></label>
+              <input type="range" id="coffeeDose" min="10" max="35" value="15" step="1" oninput="updateBrewCalc()">
+              <div class="control-value-display">
+                <span>10g (單人輕量)</span>
+                <span>20g (經典單人)</span>
+                <span>35g (雙人壺)</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label for="brewRatio">粉水比 (Ratio)：<strong id="ratioValue" class="text-gold">1 : 15 (平衡厚實)</strong></label>
+              <input type="range" id="brewRatio" min="14" max="17" value="15" step="0.5" oninput="updateBrewCalc()">
+              <div class="control-value-display">
+                <span>1:14 (濃郁)</span>
+                <span>1:15 (金杯黃金)</span>
+                <span>1:17 (清爽高酸)</span>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label>建議水溫：<strong class="text-gold">91°C ~ 93°C</strong> (淺焙高溫綻放花香)</label>
+              <label>研磨度建議：<strong class="text-gold">中細研磨 (二砂粗細)</strong></label>
+            </div>
+          </div>
+
+          <div class="calc-results">
+            <div class="result-highlight" id="totalWaterOutput">225 ml</div>
+            <div class="result-sub">建議總注入水總量</div>
+
+            <div class="brew-timeline">
+              <div class="timeline-step">
+                <strong>00:00 - 00:35</strong>
+                <span>悶蒸注水 <b id="bloomWater">30 ml</b>，靜待排氣膨脹</span>
+              </div>
+              <div class="timeline-step">
+                <strong>00:35 - 01:20</strong>
+                <span>第一段中心慢繞至 <b id="stageOneWater">140 ml</b></span>
+              </div>
+              <div class="timeline-step">
+                <strong>01:20 - 02:15</strong>
+                <span>第二段柔和注水至 <b id="stageTwoWater">225 ml</b>，滴濾完畢</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews / Social Proof (增加消費信任感) -->
+  <section class="reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle en-title">CONNOISSEUR FEEDBACK</span>
+        <h2 class="section-title">咖啡喜好者的真實讚譽</h2>
+        <p class="section-desc">
+          來自專業杯測師、手沖愛好者與每日品飲會員的真誠分享。
+        </p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>
+            「巴拿馬翡翠莊園的綠標藝妓一開袋就被撲鼻的茉莉花香震撼到了！用 V60 沖出來果酸細緻甘醇，完全沒有苦澀雜味，這是我喝過最具水準的頂級豆！」
+          </p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">林</div>
+            <div class="reviewer-info">
+              <h4>林先生 · 台北</h4>
+              <span>SCA 認證咖啡師 · 會員 1 年</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>
+            「聖荷西莊園的蘭姆酒桶發酵真的太驚艷了！剛入口滿滿的木質酒香，尾韻卻回甘如黑巧克力般厚實。新客首購折扣非常划算，已經回購第三次了！」
+          </p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">陳</div>
+            <div class="reviewer-info">
+              <h4>陳小姐 · 台中</h4>
+              <span>手沖咖啡喜好者 · 尊爵會員</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>
+            「品鑑嚐鮮禮盒 CP 值極高！每款豆子都標明烘焙日期和詳細風味曲線，送給懂咖啡的朋友當禮物超級有面子，黑色與金色的包裝質感無可挑剔！」
+          </p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">張</div>
+            <div class="reviewer-info">
+              <h4>張總監 · 新竹</h4>
+              <span>設計事務所主理人 · 訂閱會員</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shopping Cart Drawer (側邊購物車) -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="drawer-header">
+      <h3>您的品味清單 (<span id="cartCount">0</span>)</h3>
+      <button class="close-drawer-btn" onclick="closeCart()">✕</button>
+    </div>
+    <div class="drawer-body" id="cartItemsList">
+      <div style="text-align: center; color: var(--text-dark); margin: auto;">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin: 0 auto 12px; display: block;">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+        </svg>
+        購物車內目前沒有商品<br>挑選一款頂級豆開啟美好日常吧
+      </div>
+    </div>
+    <div class="drawer-footer">
+      <div class="drawer-subtotal">
+        <span>結帳小計</span>
+        <span id="cartTotal">NT$ 0</span>
+      </div>
+      <button class="btn btn-gold" style="width: 100%;" onclick="checkout()">
+        立即前往結帳
+      </button>
+      <p style="text-align: center; font-size: 0.75rem; color: var(--text-muted); margin-top: 10px;">
+        滿 NT$ 1,200 即享免運 · 支援信用卡/LINE Pay/貨到付款
+      </p>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="brand-logo" style="margin-bottom: 16px;">
+          <div class="logo-emblem">
+            <span>ZL</span>
+          </div>
+          <div class="brand-text">
+            <h1>ZL咖啡</h1>
+            <p>SPECIALTY COFFEE</p>
+          </div>
+        </div>
+        <p>
+          ZL咖啡專注於頂級精品咖啡豆的尋豆與烘焙。將自然風土的恩賜轉化為杯中極致風味，敬每一位懂得品味的咖啡愛好者。
+        </p>
+        <span class="badge-gold">頂級精品莊園專門店</span>
+      </div>
+
+      <div class="footer-col">
+        <h4>快速導覽</h4>
+        <ul class="footer-links">
+          <li><a href="#about">品牌工藝精神</a></li>
+          <li><a href="#beans">頂級咖啡豆單</a></li>
+          <li><a href="#deal">新客首購優惠</a></li>
+          <li><a href="#brew">金杯萃取計算器</a></li>
+          <li><a href="#reviews">顧客品飲好評</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>選購服務</h4>
+        <ul class="footer-links">
+          <li><a href="#deal">企業送禮與大宗採購</a></li>
+          <li><a href="#beans">產地風味輪介紹</a></li>
+          <li><a href="#deal">每月精品豆訂閱方案</a></li>
+          <li><a href="#">常見問題與配送政策</a></li>
+          <li><a href="#">退換貨與鮮度保證</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>旗艦品味空間</h4>
+        <div class="footer-contact-item">
+          <span>📍</span>
+          <span>台北市大安區敦化南路一段 88 號 (預約制)</span>
+        </div>
+        <div class="footer-contact-item">
+          <span>🕒</span>
+          <span>週一至週日 10:00 - 19:00</span>
+        </div>
+        <div class="footer-contact-item">
+          <span>✉️</span>
+          <span>service@zlcoffee.com.tw</span>
+        </div>
+        <div class="footer-contact-item">
+          <span>📞</span>
+          <span>(02) 2788-9824</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>
+        © 2026 ZL咖啡 ZL COFFEE ROASTERS. All Rights Reserved.
+      </div>
+      <div>
+        以黑色極致美學 · 萃煉頂級風味
+      </div>
+    </div>
   </footer>
 
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <!-- JavaScript Interaction -->
   <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.getElementById('navLinks');
-    menuToggle.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', open);
-      menuToggle.setAttribute('aria-label', open ? '關閉導覽選單' : '開啟導覽選單');
-      menuToggle.textContent = open ? '×' : '☰';
-    });
-    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.setAttribute('aria-label', '開啟導覽選單');
-      menuToggle.textContent = '☰';
-    }));
+    // Cart State
+    let cart = [];
 
-    const toast = document.getElementById('toast');
-    let toastTimer;
+    // Filter Products
+    function filterProducts(category, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.product-card');
+      cards.forEach(card => {
+        const itemCategory = card.getAttribute('data-category');
+        if (category === 'all' || itemCategory.includes(category)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Add to Cart Function
+    function addToCart(title, price) {
+      const existing = cart.find(item => item.title === title);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ title, price, qty: 1 });
+      }
+
+      updateCartUI();
+      showToast(`已將【${title}】加入購物車！`);
+      openCart();
+    }
+
+    // Update Cart UI
+    function updateCartUI() {
+      const cartCountBadge = document.getElementById('cartCountBadge');
+      const cartCount = document.getElementById('cartCount');
+      const cartItemsList = document.getElementById('cartItemsList');
+      const cartTotal = document.getElementById('cartTotal');
+
+      const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+      const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+      cartCountBadge.textContent = totalItems;
+      cartCount.textContent = totalItems;
+      cartTotal.textContent = `NT$ ${totalPrice.toLocaleString()}`;
+
+      if (cart.length === 0) {
+        cartItemsList.innerHTML = `
+          <div style="text-align: center; color: var(--text-dark); margin: auto;">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin: 0 auto 12px; display: block;">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+            </svg>
+            購物車內目前沒有商品<br>挑選一款頂級豆開啟美好日常吧
+          </div>
+        `;
+      } else {
+        cartItemsList.innerHTML = cart.map((item, index) => `
+          <div class="cart-item">
+            <div class="cart-item-info">
+              <div class="cart-item-title">${item.title}</div>
+              <div class="cart-item-price">NT$ ${(item.price * item.qty).toLocaleString()}</div>
+            </div>
+            <div class="cart-item-qty">
+              <button class="qty-btn" onclick="changeQty(${index}, -1)">-</button>
+              <span style="font-size: 0.9rem; font-weight: 600; min-width: 18px; text-align: center;">${item.qty}</span>
+              <button class="qty-btn" onclick="changeQty(${index}, 1)">+</button>
+            </div>
+          </div>
+        `).join('');
+      }
+    }
+
+    function changeQty(index, delta) {
+      cart[index].qty += delta;
+      if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+      }
+      updateCartUI();
+    }
+
+    // Open/Close Cart Drawer
+    const cartDrawer = document.getElementById('cartDrawer');
+    const cartOverlay = document.getElementById('cartOverlay');
+
+    function openCart() {
+      cartDrawer.classList.add('active');
+      cartOverlay.classList.add('active');
+    }
+
+    function closeCart() {
+      cartDrawer.classList.remove('active');
+      cartOverlay.classList.remove('active');
+    }
+
+    document.getElementById('openCartBtn').addEventListener('click', openCart);
+
+    // Toast Notification
     function showToast(message) {
-      window.clearTimeout(toastTimer);
-      toast.textContent = message;
-      toast.classList.add('show');
-      toastTimer = window.setTimeout(() => toast.classList.remove('show'), 2600);
-    }
-    document.querySelectorAll('[data-coffee]').forEach(button => button.addEventListener('click', () => {
-      showToast(`已將「${button.dataset.coffee}」加入你的收藏。`);
-    }));
-    document.getElementById('subscribeForm').addEventListener('submit', event => {
-      event.preventDefault();
-      event.currentTarget.reset();
-      showToast('謝謝訂閱，下一封晴朗的風味通信即將寄出。');
-    });
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.innerHTML = `
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        <span>${message}</span>
+      `;
+      container.appendChild(toast);
 
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const revealItems = document.querySelectorAll('.reveal');
-    if (reducedMotion || !('IntersectionObserver' in window)) {
-      revealItems.forEach(item => item.classList.add('visible'));
-    } else {
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: .12 });
-      revealItems.forEach(item => observer.observe(item));
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(10px)';
+        toast.style.transition = 'all 0.3s ease';
+        setTimeout(() => toast.remove(), 300);
+      }, 2500);
     }
+
+    // Copy Promo Code
+    function copyPromoCode(code) {
+      navigator.clipboard.writeText(code).then(() => {
+        showToast(`已複製優惠碼：${code}！結帳立即享 88 折！`);
+      }).catch(() => {
+        showToast(`優惠碼為：${code}`);
+      });
+    }
+
+    // Checkout Action
+    function checkout() {
+      if (cart.length === 0) {
+        showToast('請先加入喜愛的咖啡豆至購物車！');
+        return;
+      }
+      const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      alert(`感謝您的選購！\n您共選購了 ${cart.length} 項頂級咖啡豆商品，結帳金額為 NT$ ${totalPrice.toLocaleString()}。\n客服人員將於 24 小時內確認訂單並安排現烘出貨！`);
+      cart = [];
+      updateCartUI();
+      closeCart();
+    }
+
+    // Interactive Golden Ratio Calculator
+    function updateBrewCalc() {
+      const dose = parseFloat(document.getElementById('coffeeDose').value);
+      const ratio = parseFloat(document.getElementById('brewRatio').value);
+
+      document.getElementById('doseValue').textContent = `${dose} g`;
+      document.getElementById('ratioValue').textContent = `1 : ${ratio}`;
+
+      const totalWater = Math.round(dose * ratio);
+      const bloomWater = Math.round(dose * 2);
+      const stageOneWater = Math.round(totalWater * 0.6);
+
+      document.getElementById('totalWaterOutput').textContent = `${totalWater} ml`;
+      document.getElementById('bloomWater').textContent = `${bloomWater} ml`;
+      document.getElementById('stageOneWater').textContent = `${stageOneWater} ml`;
+      document.getElementById('stageTwoWater').textContent = `${totalWater} ml`;
+    }
+
+    // Mobile Menu Toggle
+    document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+      const menu = document.querySelector('.nav-menu');
+      if (menu.style.display === 'flex') {
+        menu.style.display = 'none';
+      } else {
+        menu.style.display = 'flex';
+        menu.style.flexDirection = 'column';
+        menu.style.position = 'absolute';
+        menu.style.top = '80px';
+        menu.style.left = '0';
+        menu.style.width = '100%';
+        menu.style.background = '#0a0a0c';
+        menu.style.padding = '24px';
+        menu.style.borderBottom = '1px solid #272730';
+      }
+    });
   </script>
 </body>
 </html>
