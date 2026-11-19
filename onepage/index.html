@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="藍天咖啡，為手沖咖啡愛好者挑選當季精品咖啡豆，讓每一杯都清澈、明亮、值得細品。">
-  <title>藍天咖啡｜讓風味，慢慢抵達</title>
+  <title>黑天咖啡｜讓風味，慢慢抵達</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -89,9 +89,38 @@
     .nav-links .nav-cta:hover { color: var(--navy); background: #fff; }
     .menu-toggle { display: none; width: 42px; height: 42px; border: 1px solid rgba(255,255,255,.7); color: #fff; background: transparent; font-size: 23px; line-height: 1; }
 
-    .hero { position: relative; min-height: 704px; overflow: hidden; color: #fff; background: var(--navy); isolation: isolate; }
-    .hero::before { position: absolute; z-index: -2; top: -320px; right: -210px; width: 810px; height: 810px; border-radius: 50%; background: radial-gradient(circle, rgba(117,198,232,.38), rgba(12,91,149,.18) 38%, transparent 69%); content: ""; }
-    .hero::after { position: absolute; z-index: -1; right: 12%; bottom: -430px; width: 780px; height: 780px; border: 1px solid rgba(117,198,232,.18); border-radius: 50%; box-shadow: 0 0 0 65px rgba(117,198,232,.035), 0 0 0 154px rgba(117,198,232,.025); content: ""; }
+    .hero {
+      position: relative;
+      min-height: 704px;
+      overflow: hidden;
+      color: #fff;
+      background: radial-gradient(circle at 75% 35%, rgba(117,198,232,.18) 0%, transparent 45%),
+                  linear-gradient(180deg, var(--navy) 0%, #031525 65%, #010a12 100%);
+      isolation: isolate;
+    }
+    .hero::before {
+      position: absolute;
+      z-index: -2;
+      top: -320px;
+      right: -210px;
+      width: 810px;
+      height: 810px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(117,198,232,.38), rgba(12,91,149,.18) 38%, rgba(0,0,0,.6) 62%, transparent 72%);
+      content: "";
+    }
+    .hero::after {
+      position: absolute;
+      z-index: -1;
+      right: 12%;
+      bottom: -430px;
+      width: 780px;
+      height: 780px;
+      border: 1px solid rgba(117,198,232,.18);
+      border-radius: 50%;
+      box-shadow: 0 0 0 65px rgba(117,198,232,.035), 0 0 0 154px rgba(117,198,232,.025);
+      content: "";
+    }
     .hero-grid { min-height: 704px; display: grid; grid-template-columns: 1.02fr .98fr; gap: 45px; align-items: center; padding: 122px 0 72px; }
     .hero-copy { position: relative; z-index: 2; }
     .hero .eyebrow { color: var(--sky); }
@@ -195,7 +224,7 @@
     .footer-grid { display: grid; grid-template-columns: 1.45fr .8fr 1fr; gap: 55px; padding-bottom: 48px; }
     .footer-brand .brand { margin-bottom: 16px; }
     .footer-brand p { max-width: 330px; margin: 0; font-size: 14px; }
-    .footer-title { margin: 0 0 14px; color: var(--sky); font-size: 11px; font-weight: 700; letter-spacing: .18em; }
+    .footer-title { margin: 0 0 14px; color: var(--sky); font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
     .footer-links { display: grid; gap: 8px; font-size: 14px; }
     .footer-links a:hover { color: var(--sky); }
     .footer-links address { font-style: normal; }
@@ -281,7 +310,7 @@
       </a>
       <button class="menu-toggle" type="button" aria-controls="navLinks" aria-expanded="false" aria-label="開啟導覽選單">☰</button>
       <div class="nav-links" id="navLinks">
-        <a href="#story">我們的故事</a>
+        <a href="#story">我們的堅持</a>
         <a href="#coffee">本季選豆</a>
         <a href="#brew">沖煮日常</a>
         <a class="nav-cta" href="#visit">訂閱風味通信</a>
@@ -295,12 +324,12 @@
         <div class="hero-copy">
           <p class="eyebrow">HAND BREWED · SLOWLY ROASTED</p>
           <h1 id="heroTitle">讓風味，在<span>藍天</span>下慢慢抵達。</h1>
-          <p class="hero-lede">藍天咖啡為喜歡手沖的您，挑選值得細品的單一產區咖啡豆。從第一縷花香，到最後一口回甘，每一杯都有屬於自己的晴朗天氣。</p>
+          <p class="hero-lede">藍天拿鐵為喜歡手沖的你，挑選值得細品的單一產區咖啡豆。從第一縷花香，到最後一口回甘，每一杯都有自己的晴朗天氣。</p>
           <div class="hero-actions">
-            <a class="button button--sand" href="#coffee">探索本季咖啡豆 →</a>
+            <a class="button button--sand" href="#coffee">探索本季風味 →</a>
             <a class="outline-link" href="#story">認識藍天</a>
           </div>
-          <p class="hero-note">TAIPEI · TAIWAN · EST. 2025</p>
+          <p class="hero-note">TAIPEI · TAIWAN · EST. 2018</p>
           <span class="scroll-cue">SCROLL TO DISCOVER</span>
         </div>
         <div class="hero-art" aria-hidden="true">
@@ -384,11 +413,11 @@
 
   <footer class="site-footer">
     <div class="wrap footer-grid">
-      <div class="footer-brand"><a class="brand" href="#top" aria-label="回到藍天咖啡首頁"><span class="brand-mark" aria-hidden="true">B</span><span class="brand-copy"><strong>藍天咖啡</strong><small>BLUE SKY COFFEE</small></span></a><p>為喜愛手沖咖啡的你，留下 一段慢慢品味、微微放晴的時間。</p></div>
-      <div><p class="footer-title">網站主題</p><div class="footer-links"><a href="#story">我們的故事</a><a href="#coffee">本季選豆</a><a href="#brew">沖煮日常</a></div></div>
-      <div><p class="footer-title">聯絡我們</p><div class="footer-links"><a href="mailto:hello@bluesky.coffee">hello@bluesky.coffee</a><address>台中市西屯區僑光路 100 號</address><span>每日 10:00 — 19:00</span></div></div>
+      <div class="footer-brand"><a class="brand" href="#top" aria-label="回到藍天咖啡首頁"><span class="brand-mark" aria-hidden="true">B</span><span class="brand-copy"><strong>黑天拿鐵</strong><small>BLUE SKY COFFEE</small></span></a><p>為喜愛手沖咖啡的你，留下一段慢慢品味、微微放晴的時間。</p></div>
+      <div><p class="footer-title">Explore</p><div class="footer-links"><a href="#story">我們的堅持</a><a href="#coffee">本季選豆</a><a href="#brew">沖煮日常</a></div></div>
+      <div><p class="footer-title">Contact</p><div class="footer-links"><a href="mailto:hello@bluesky.coffee">hello@bluesky.coffee</a><address>台北市大安區晴朗路 18 號</address><span>每日 10:00 — 19:00</span></div></div>
     </div>
-    <div class="wrap footer-bottom"><span>© 2025 BLUE SKY COFFEE. ALL RIGHTS RESERVED.</span><span>BREW SLOW · LIVE BRIGHT</span></div>
+    <div class="wrap footer-bottom"><span>© 2026 BLUE SKY COFFEE. ALL RIGHTS RESERVED.</span><span>BREW SLOW · LIVE BRIGHT</span></div>
   </footer>
   <div class="toast" role="status" aria-live="polite"></div>
 
